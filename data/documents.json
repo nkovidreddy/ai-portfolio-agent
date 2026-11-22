@@ -1,0 +1,68 @@
+[
+  {
+    "id": "nvda-q1",
+    "ticker": "NVDA",
+    "date": "2022-05-25",
+    "period": "Q1 FY2023",
+    "version": 1,
+    "title": "NVIDIA Q1 FY2023 \u2014 financial results",
+    "source": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-first-quarter-fiscal-2023",
+    "kind": "earnings summary",
+    "text": "NVIDIA reported year-over-year revenue growth of 46% on $8.29 billion of revenue. Data Center and Gaming reached record revenue. GAAP diluted EPS was $0.64, 16% below the prior year; the Arm transaction termination charge affected earnings."
+  },
+  {
+    "id": "nvda-q1-outlook",
+    "ticker": "NVDA",
+    "date": "2022-05-25",
+    "period": "Q1 FY2023",
+    "version": 1,
+    "title": "NVIDIA Q1 FY2023 \u2014 outlook",
+    "source": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-first-quarter-fiscal-2023",
+    "kind": "outlook summary",
+    "text": "The next quarter revenue outlook was $8.10 billion, plus or minus 2%. The estimate included roughly $500 million in reductions associated with Russia and COVID-related restrictions in China."
+  },
+  {
+    "id": "nvda-q2",
+    "ticker": "NVDA",
+    "date": "2022-08-24",
+    "period": "Q2 FY2023",
+    "version": 2,
+    "title": "NVIDIA Q2 FY2023 \u2014 financial results",
+    "source": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-second-quarter-fiscal-2023",
+    "kind": "earnings summary",
+    "text": "NVIDIA reported year-over-year revenue growth of 3% on $6.70 billion of revenue, a slowdown from the previous quarter. Revenue declined 19% sequentially. GAAP diluted EPS fell 72% year over year to $0.26."
+  },
+  {
+    "id": "nvda-q2-detail",
+    "ticker": "NVDA",
+    "date": "2022-08-24",
+    "period": "Q2 FY2023",
+    "version": 2,
+    "title": "NVIDIA Q2 FY2023 \u2014 business context",
+    "source": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-second-quarter-fiscal-2023",
+    "kind": "business summary",
+    "text": "Data Center revenue reached $3.81 billion, 61% above the prior year. Management described a difficult economic environment and supply-chain transitions. Segment strength and the overall earnings decline provide contrasting evidence."
+  },
+  {
+    "id": "msft-q4",
+    "ticker": "MSFT",
+    "date": "2024-07-30",
+    "period": "Q4 FY2024",
+    "version": 1,
+    "title": "Microsoft Q4 FY2024 \u2014 financial results",
+    "source": "https://www.microsoft.com/en-us/investor/earnings/fy-2024-q4/press-release-webcast",
+    "kind": "earnings summary",
+    "text": "Microsoft reported year-over-year revenue growth of 15% on $64.7 billion of revenue. Operating income rose 15% to $27.9 billion. Net income rose 10% to $22.0 billion, and diluted EPS rose 10% to $2.95."
+  },
+  {
+    "id": "msft-q4-year",
+    "ticker": "MSFT",
+    "date": "2024-07-30",
+    "period": "Q4 FY2024",
+    "version": 1,
+    "title": "Microsoft FY2024 \u2014 annual results",
+    "source": "https://www.microsoft.com/en-us/investor/earnings/fy-2024-q4/press-release-webcast",
+    "kind": "annual context summary",
+    "text": "For fiscal 2024, Microsoft recorded $245.1 billion in revenue, up 16%. Operating income increased 24% to $109.4 billion and net income increased 22% to $88.1 billion."
+  }
+]

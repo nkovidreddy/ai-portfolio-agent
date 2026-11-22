@@ -1,0 +1,19 @@
+
+1. Before newer report — User A
+  CONSIDER FOR FURTHER REVIEW: $2,000; capacity $6,000; source 2022-05-25
+
+2. Before newer report — User B
+  WAIT / REVIEW: $0; capacity $0; source 2022-05-25
+
+3. RAG update indexed: NVIDIA Q2 FY2023 — financial results (2022-08-24)
+
+4. After new report — User A
+  WAIT / REVIEW: $0; capacity $6,000; source 2022-08-24
+
+5. After new report — User B
+  WAIT / REVIEW: $0; capacity $0; source 2022-08-24
+
+6. Unexpected $5,000 expense — User A
+  CONSIDER FOR FURTHER REVIEW: $1,000; capacity $1,000; source 2022-05-25
+
+Detailed trace saved to /mnt/data/portfolio_upgrade/outputs/demo_results.json

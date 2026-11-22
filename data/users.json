@@ -1,0 +1,30 @@
+{
+  "user_a": {
+    "display_name": "Investor Profile A",
+    "cash_balance": 15000,
+    "emergency_reserve": 6000,
+    "upcoming_essential_expenses": 2000,
+    "upcoming_debt_payments": 1000,
+    "risk_tolerance": "moderate",
+    "investment_horizon": "long",
+    "max_position_fraction": 0.25,
+    "holdings": {
+      "NVDA": 3500,
+      "OTHER_DIVERSIFIED": 16500
+    }
+  },
+  "user_b": {
+    "display_name": "Investor Profile B",
+    "cash_balance": 4000,
+    "emergency_reserve": 6000,
+    "upcoming_essential_expenses": 2000,
+    "upcoming_debt_payments": 0,
+    "risk_tolerance": "low",
+    "investment_horizon": "short",
+    "max_position_fraction": 0.2,
+    "holdings": {
+      "NVDA": 1000,
+      "OTHER_DIVERSIFIED": 9000
+    }
+  }
+}

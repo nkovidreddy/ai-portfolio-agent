@@ -1,0 +1,48 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Portfolio Intelligence — CMU Demo</title>
+<style>
+:root{color-scheme:dark;--bg:#0d1622;--panel:#172536;--panel2:#223449;--white:#f5fafc;--muted:#aec0cf;--teal:#33c9b8;--blue:#81aeef;--red:#ff918a;--line:#33475d}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--white);font-family:Inter,system-ui,-apple-system,Segoe UI,Arial,sans-serif}
+header{padding:27px 34px 21px;border-bottom:1px solid var(--line)}header small{color:var(--teal);letter-spacing:2px;font-weight:700}h1{font-size:27px;margin:8px 0}header p{color:var(--muted);margin:4px 0;font-size:14px}
+main{display:grid;grid-template-columns:285px minmax(0,1fr);gap:22px;max-width:1450px;margin:auto;padding:24px}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:13px;padding:22px}.controls{align-self:start;position:sticky;top:14px}h2{font-size:17px;margin:0 0 20px}h3{font-size:15px;margin:0 0 12px}
+label{display:block;font-size:12px;color:var(--muted);font-weight:650;margin:14px 0 7px}select,input{width:100%;padding:11px 12px;background:var(--bg);border:1px solid var(--line);border-radius:7px;color:var(--white);font-size:14px}
+button{padding:12px 10px;background:var(--teal);border:0;border-radius:8px;color:#05201f;font-weight:750;cursor:pointer;width:100%;margin-top:14px}button.secondary{background:var(--panel2);color:var(--white);border:1px solid var(--line)}button:hover{filter:brightness(1.12)}.hint{color:var(--muted);font-size:12px;line-height:1.55}.warning{color:#f7cd86}
+.metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.metric{background:var(--panel);border:1px solid var(--line);padding:17px;border-radius:12px}.metric div{font-size:12px;color:var(--muted);margin-bottom:10px}.metric strong{font-size:21px}.positive{color:var(--teal)}.negative{color:var(--red)}
+.notice{margin-top:16px;background:var(--panel2);border-left:4px solid var(--teal);border-radius:8px;padding:15px;font-size:14px;line-height:1.65}.cols{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px;margin-top:18px}.data{width:100%;border-collapse:collapse;font-size:13px}th,td{text-align:left;padding:12px;border-bottom:1px solid var(--line)}th{color:var(--muted);font-size:11px;text-transform:uppercase}th:last-child,td:last-child{text-align:right}
+.report{padding:11px 0;border-bottom:1px solid var(--line)}.report b{display:block;font-size:14px}.report small{display:block;color:var(--teal);margin:5px 0}.report p{font-size:13px;color:var(--muted);line-height:1.55;margin:7px 0 0}.status{margin-top:13px;color:var(--muted);font-size:13px;white-space:pre-wrap}.disclaimer{font-size:12px;color:var(--muted);padding:18px 0 4px}.flow{font-family:monospace;font-size:12px;white-space:pre-wrap;line-height:1.8;color:var(--blue)}
+@media(max-width:970px){main{grid-template-columns:1fr}.controls{position:static}.metrics,.cols{grid-template-columns:1fr}header{padding:20px}}
+</style></head><body>
+<header><small>CMU • AI AGENT CAPSTONE • HISTORICAL MARKET REPLAY</small><h1>Portfolio Intelligence Agent</h1><p>Four logical agents · vector retrieval + optional live AI · bounded candidate search · read-only, human-reviewed decisions</p></header>
+<main><section class="panel controls"><h2>Demo controls</h2>
+<label for="user">Investor profile</label><select id="user"><option value="user_a">Profile A — moderate / long-term</option><option value="user_b">Profile B — low / short-term</option></select>
+<label for="ticker">Company</label><select id="ticker"><option value="NVDA">NVIDIA (NVDA)</option><option value="MSFT">Microsoft (MSFT)</option></select>
+<label for="amount">Requested investment ($)</label><input type="number" min="1" max="1000000" step="100" id="amount" value="2000">
+<label for="expense">Unexpected upcoming expense ($)</label><input type="number" min="0" step="500" id="expense" value="0">
+<label for="mode">Research mode</label><select id="mode"><option value="offline">Offline • reproducible</option><option value="ai">Live AI • OpenAI API</option></select><button id="analyze">Run analysis</button><button class="secondary" id="index">Index NVIDIA Q2 report</button><button class="secondary" id="reset">Reset to NVIDIA Q1</button>
+<p id="control-status" class="hint"></p><hr style="border:0;border-top:1px solid var(--line);margin:20px 0"><p class="hint warning">Public historical earnings summaries; sample investor profiles. Live AI mode sends public evidence to OpenAI. No current market feed, bank connection or trading.</p></section>
+<section><div class="metrics"><div class="metric"><div>Assessment</div><strong id="outcome">—</strong></div><div class="metric"><div>Amount for further review</div><strong id="allocation">—</strong></div><div class="metric"><div>Modeled investment capacity</div><strong id="capacity">—</strong></div></div>
+<div class="notice" id="explanation">Loading scenario…</div>
+<div class="cols"><div class="panel"><h2>Bounded Tree of Thought</h2><p class="hint">Three branches ranked; two finalists retained. Scores reflect demo rules, not forecast returns.</p><table class="data"><thead><tr><th>Action</th><th>Score</th><th>Feasible</th></tr></thead><tbody id="options"></tbody></table><div id="selected" class="status"></div></div>
+<div class="panel"><h2>Research Agent • retrieved evidence</h2><p class="hint" id="source-date">Latest indexed report: —</p><div id="documents"></div><div id="ai-status" class="status"></div><div id="ai-observations"></div></div></div>
+<div class="cols"><div class="panel"><h2>Review Agent • safety checks</h2><div id="checks" class="status">—</div></div><div class="panel"><h2>Coordination</h2><div class="flow">Coordinator → Research + financial context
+            ↓
+Decision (full / smaller / wait)
+            ↓
+Review → human-facing assessment</div></div></div>
+<div class="disclaimer">Educational historical replay, not a current investment recommendation. The user makes all financial decisions. No investment orders.</div></section></main>
+<script>
+const $=id=>document.getElementById(id), money=n=>'$'+Number(n).toLocaleString('en-US',{maximumFractionDigits:0});
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+async function analysis(){ $('analyze').disabled=true; $('index').disabled=true; $('reset').disabled=true; $('explanation').textContent="Analyzing historical evidence…"; try{const p=new URLSearchParams({user:$('user').value,ticker:$('ticker').value,amount:$('amount').value,expense:$('expense').value,mode:$('mode').value});const r=await fetch('/api/analysis?'+p);const d=await r.json();if(!r.ok)throw Error(d.error);
+$('outcome').textContent=d.recommendation;$('outcome').className=d.consider_amount>0?'positive':'negative';$('allocation').textContent=money(d.consider_amount);$('capacity').textContent=money(d.financials.investment_capacity);
+$('explanation').textContent=d.explanation;$('source-date').textContent='Latest indexed report: '+d.research.latest_date+' · Historical signal: '+d.research.signal+' · '+d.research.retrieval_mode+' · '+d.elapsed_ms+' ms';
+$('options').innerHTML=d.financials.options.map(o=>`<tr><td>${esc(o.label)}</td><td>${o.score}</td><td style="color:${o.feasible?'var(--teal)':'var(--red)'}">${o.feasible?'Yes':'No'}</td></tr>`).join('');
+$('selected').textContent='Selected: '+d.financials.selected.label+' • '+d.financials.selected.rationale;
+$('documents').innerHTML=d.research.sources.map(s=>`<article class="report"><b>${esc(s.title)}</b><small>${esc(s.date)} • <a style="color:var(--teal)" href="${esc(s.source)}" target="_blank" rel="noopener noreferrer">Official source</a></small><p>${esc(s.excerpt)}</p></article>`).join('');
+$('ai-status').textContent=d.research.ai_status; $('ai-observations').innerHTML=d.research.ai_analysis ? '<h3 style="margin-top:14px">Model evidence assessment: '+esc(d.research.ai_analysis.stance)+'</h3>'+d.research.ai_analysis.observations.map(o=>`<article class="report"><small>${esc(o.source_id)}</small><p>${esc(o.interpretation)}</p><p>Evidence: “${esc(o.quote)}”</p></article>`).join('') : '';
+$('checks').textContent='Review passed: '+(d.review.passed?'Yes':'No')+'\nHuman review required: '+(d.review.human_review_required?'Yes':'No')+'\nIssues: '+(d.review.issues.length?d.review.issues.join('; '):'No violations found');
+}catch(e){$('explanation').textContent='Unable to analyze: '+e.message;}finally{ $('analyze').disabled=false; $('index').disabled=false; $('reset').disabled=false; }}
+async function mutate(path){try{const r=await fetch(path,{method:'POST'});const d=await r.json();$('control-status').textContent=d.indexed_id?'Indexed '+d.indexed_id+' ('+d.date+')':'Reset to NVIDIA Q1';await analysis();}catch(e){$('control-status').textContent=e.message}}
+$('analyze').onclick=analysis;$('index').onclick=()=>mutate('/api/index-latest');$('reset').onclick=()=>mutate('/api/reset');$('user').onchange=()=>{if($('mode').value==='offline')analysis()};$('ticker').onchange=()=>{if($('mode').value==='offline')analysis()};analysis();
+</script></body></html>

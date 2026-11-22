@@ -1,0 +1,523 @@
+{
+  "1. Before newer report \u2014 User A": {
+    "user_id": "user_a",
+    "user_name": "Investor Profile A",
+    "ticker": "NVDA",
+    "requested_amount": 2000,
+    "recommendation": "CONSIDER FOR FURTHER REVIEW",
+    "consider_amount": 2000,
+    "financials": {
+      "investment_capacity": 6000.0,
+      "current_position_value": 3500.0,
+      "current_portfolio_value": 20000.0,
+      "options": [
+        {
+          "label": "Requested amount",
+          "amount": 2000,
+          "score": 90,
+          "feasible": true,
+          "rationale": "passes modeled conditions"
+        },
+        {
+          "label": "Smaller amount",
+          "amount": 1000.0,
+          "score": 82,
+          "feasible": true,
+          "rationale": "passes modeled conditions"
+        },
+        {
+          "label": "Wait / review",
+          "amount": 0.0,
+          "score": 50,
+          "feasible": true,
+          "rationale": "passes modeled conditions"
+        }
+      ],
+      "finalists": [
+        {
+          "label": "Requested amount",
+          "amount": 2000,
+          "score": 90,
+          "feasible": true,
+          "rationale": "passes modeled conditions"
+        },
+        {
+          "label": "Smaller amount",
+          "amount": 1000.0,
+          "score": 82,
+          "feasible": true,
+          "rationale": "passes modeled conditions"
+        }
+      ],
+      "selected": {
+        "label": "Requested amount",
+        "amount": 2000,
+        "score": 90,
+        "feasible": true,
+        "rationale": "passes modeled conditions"
+      },
+      "signal": "positive",
+      "unexpected_expense": 0,
+      "requested_amount": 2000
+    },
+    "research": {
+      "signal": "positive",
+      "latest_date": "2022-05-25",
+      "sources": [
+        {
+          "title": "NVIDIA Q1 FY2023 \u2014 financial results",
+          "date": "2022-05-25",
+          "id": "nvda-q1",
+          "source": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-first-quarter-fiscal-2023",
+          "excerpt": "NVIDIA reported year-over-year revenue growth of 46% on $8.29 billion of revenue. Data Center and Gaming reached record revenue. GAAP diluted EPS was $0.64, 16% below the prior year; the Arm transaction termination charge affected earnings.",
+          "retrieval_score": 0.228
+        },
+        {
+          "title": "NVIDIA Q1 FY2023 \u2014 outlook",
+          "date": "2022-05-25",
+          "id": "nvda-q1-outlook",
+          "source": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-first-quarter-fiscal-2023",
+          "excerpt": "The next quarter revenue outlook was $8.10 billion, plus or minus 2%. The estimate included roughly $500 million in reductions associated with Russia and COVID-related restrictions in China.",
+          "retrieval_score": 0.035
+        }
+      ],
+      "derived_metrics": {
+        "revenue_growth_pct": 46.0,
+        "forward_guidance_pct": null,
+        "weakening_language": false
+      },
+      "baseline_signal": "positive",
+      "retrieval_mode": "TF-IDF (offline)",
+      "ai_status": "Not requested",
+      "ai_analysis": null
+    },
+    "review": {
+      "passed": true,
+      "issues": [],
+      "human_review_required": false
+    },
+    "explanation": "Investor Profile A: modeled investment capacity is $6,000 after reserves, upcoming expenses, debt and any unexpected expense. The latest indexed NVDA report (2022-05-25) produces a positive historical research signal. Decision: consider for further review, with $2,000 for further consideration. Passes modeled conditions. The user must make the final decision.",
+    "elapsed_ms": 2,
+    "disclaimer": "Historical replay using public earnings summaries and sample investor profiles. Not current market analysis, financial advice or an instruction to trade."
+  },
+  "2. Before newer report \u2014 User B": {
+    "user_id": "user_b",
+    "user_name": "Investor Profile B",
+    "ticker": "NVDA",
+    "requested_amount": 2000,
+    "recommendation": "WAIT / REVIEW",
+    "consider_amount": 0.0,
+    "financials": {
+      "investment_capacity": 0.0,
+      "current_position_value": 1000.0,
+      "current_portfolio_value": 10000.0,
+      "options": [
+        {
+          "label": "Requested amount",
+          "amount": 2000,
+          "score": 0,
+          "feasible": false,
+          "rationale": "cash would fall below expenses / emergency reserve; position concentration limit exceeded; short investment horizon"
+        },
+        {
+          "label": "Smaller amount",
+          "amount": 1000.0,
+          "score": 0,
+          "feasible": false,
+          "rationale": "cash would fall below expenses / emergency reserve; short investment horizon"
+        },
+        {
+          "label": "Wait / review",
+          "amount": 0.0,
+          "score": 70,
+          "feasible": true,
+          "rationale": "passes modeled conditions"
+        }
+      ],
+      "finalists": [
+        {
+          "label": "Wait / review",
+          "amount": 0.0,
+          "score": 70,
+          "feasible": true,
+          "rationale": "passes modeled conditions"
+        },
+        {
+          "label": "Requested amount",
+          "amount": 2000,
+          "score": 0,
+          "feasible": false,
+          "rationale": "cash would fall below expenses / emergency reserve; position concentration limit exceeded; short investment horizon"
+        }
+      ],
+      "selected": {
+        "label": "Wait / review",
+        "amount": 0.0,
+        "score": 70,
+        "feasible": true,
+        "rationale": "passes modeled conditions"
+      },
+      "signal": "positive",
+      "unexpected_expense": 0,
+      "requested_amount": 2000
+    },
+    "research": {
+      "signal": "positive",
+      "latest_date": "2022-05-25",
+      "sources": [
+        {
+          "title": "NVIDIA Q1 FY2023 \u2014 financial results",
+          "date": "2022-05-25",
+          "id": "nvda-q1",
+          "source": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-first-quarter-fiscal-2023",
+          "excerpt": "NVIDIA reported year-over-year revenue growth of 46% on $8.29 billion of revenue. Data Center and Gaming reached record revenue. GAAP diluted EPS was $0.64, 16% below the prior year; the Arm transaction termination charge affected earnings.",
+          "retrieval_score": 0.228
+        },
+        {
+          "title": "NVIDIA Q1 FY2023 \u2014 outlook",
+          "date": "2022-05-25",
+          "id": "nvda-q1-outlook",
+          "source": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-first-quarter-fiscal-2023",
+          "excerpt": "The next quarter revenue outlook was $8.10 billion, plus or minus 2%. The estimate included roughly $500 million in reductions associated with Russia and COVID-related restrictions in China.",
+          "retrieval_score": 0.035
+        }
+      ],
+      "derived_metrics": {
+        "revenue_growth_pct": 46.0,
+        "forward_guidance_pct": null,
+        "weakening_language": false
+      },
+      "baseline_signal": "positive",
+      "retrieval_mode": "TF-IDF (offline)",
+      "ai_status": "Not requested",
+      "ai_analysis": null
+    },
+    "review": {
+      "passed": true,
+      "issues": [],
+      "human_review_required": true
+    },
+    "explanation": "Investor Profile B: modeled investment capacity is $0 after reserves, upcoming expenses, debt and any unexpected expense. The latest indexed NVDA report (2022-05-25) produces a positive historical research signal. Decision: wait / review, with $0 for further consideration. Passes modeled conditions. The user must make the final decision.",
+    "elapsed_ms": 1,
+    "disclaimer": "Historical replay using public earnings summaries and sample investor profiles. Not current market analysis, financial advice or an instruction to trade."
+  },
+  "4. After new report \u2014 User A": {
+    "user_id": "user_a",
+    "user_name": "Investor Profile A",
+    "ticker": "NVDA",
+    "requested_amount": 2000,
+    "recommendation": "WAIT / REVIEW",
+    "consider_amount": 0.0,
+    "financials": {
+      "investment_capacity": 6000.0,
+      "current_position_value": 3500.0,
+      "current_portfolio_value": 20000.0,
+      "options": [
+        {
+          "label": "Requested amount",
+          "amount": 2000,
+          "score": 0,
+          "feasible": false,
+          "rationale": "newer earnings evidence indicates declining outlook"
+        },
+        {
+          "label": "Smaller amount",
+          "amount": 1000.0,
+          "score": 0,
+          "feasible": false,
+          "rationale": "newer earnings evidence indicates declining outlook"
+        },
+        {
+          "label": "Wait / review",
+          "amount": 0.0,
+          "score": 95,
+          "feasible": true,
+          "rationale": "passes modeled conditions"
+        }
+      ],
+      "finalists": [
+        {
+          "label": "Wait / review",
+          "amount": 0.0,
+          "score": 95,
+          "feasible": true,
+          "rationale": "passes modeled conditions"
+        },
+        {
+          "label": "Requested amount",
+          "amount": 2000,
+          "score": 0,
+          "feasible": false,
+          "rationale": "newer earnings evidence indicates declining outlook"
+        }
+      ],
+      "selected": {
+        "label": "Wait / review",
+        "amount": 0.0,
+        "score": 95,
+        "feasible": true,
+        "rationale": "passes modeled conditions"
+      },
+      "signal": "negative",
+      "unexpected_expense": 0,
+      "requested_amount": 2000
+    },
+    "research": {
+      "signal": "negative",
+      "latest_date": "2022-08-24",
+      "sources": [
+        {
+          "title": "NVIDIA Q1 FY2023 \u2014 financial results",
+          "date": "2022-05-25",
+          "id": "nvda-q1",
+          "source": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-first-quarter-fiscal-2023",
+          "excerpt": "NVIDIA reported year-over-year revenue growth of 46% on $8.29 billion of revenue. Data Center and Gaming reached record revenue. GAAP diluted EPS was $0.64, 16% below the prior year; the Arm transaction termination charge affected earnings.",
+          "retrieval_score": 0.189
+        },
+        {
+          "title": "NVIDIA Q2 FY2023 \u2014 business context",
+          "date": "2022-08-24",
+          "id": "nvda-q2-detail",
+          "source": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-second-quarter-fiscal-2023",
+          "excerpt": "Data Center revenue reached $3.81 billion, 61% above the prior year. Management described a difficult economic environment and supply-chain transitions. Segment strength and the overall earnings decline provide contrasting evidence.",
+          "retrieval_score": 0.17
+        },
+        {
+          "title": "NVIDIA Q2 FY2023 \u2014 financial results",
+          "date": "2022-08-24",
+          "id": "nvda-q2",
+          "source": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-second-quarter-fiscal-2023",
+          "excerpt": "NVIDIA reported year-over-year revenue growth of 3% on $6.70 billion of revenue, a slowdown from the previous quarter. Revenue declined 19% sequentially. GAAP diluted EPS fell 72% year over year to $0.26.",
+          "retrieval_score": 0.111
+        }
+      ],
+      "derived_metrics": {
+        "revenue_growth_pct": 3.0,
+        "forward_guidance_pct": null,
+        "weakening_language": true
+      },
+      "baseline_signal": "negative",
+      "retrieval_mode": "TF-IDF (offline)",
+      "ai_status": "Not requested",
+      "ai_analysis": null
+    },
+    "review": {
+      "passed": true,
+      "issues": [],
+      "human_review_required": true
+    },
+    "explanation": "Investor Profile A: modeled investment capacity is $6,000 after reserves, upcoming expenses, debt and any unexpected expense. The latest indexed NVDA report (2022-08-24) produces a negative historical research signal. Decision: wait / review, with $0 for further consideration. Passes modeled conditions. The user must make the final decision.",
+    "elapsed_ms": 1,
+    "disclaimer": "Historical replay using public earnings summaries and sample investor profiles. Not current market analysis, financial advice or an instruction to trade."
+  },
+  "5. After new report \u2014 User B": {
+    "user_id": "user_b",
+    "user_name": "Investor Profile B",
+    "ticker": "NVDA",
+    "requested_amount": 2000,
+    "recommendation": "WAIT / REVIEW",
+    "consider_amount": 0.0,
+    "financials": {
+      "investment_capacity": 0.0,
+      "current_position_value": 1000.0,
+      "current_portfolio_value": 10000.0,
+      "options": [
+        {
+          "label": "Requested amount",
+          "amount": 2000,
+          "score": 0,
+          "feasible": false,
+          "rationale": "cash would fall below expenses / emergency reserve; position concentration limit exceeded; newer earnings evidence indicates declining outlook; short investment horizon; low risk tolerance"
+        },
+        {
+          "label": "Smaller amount",
+          "amount": 1000.0,
+          "score": 0,
+          "feasible": false,
+          "rationale": "cash would fall below expenses / emergency reserve; newer earnings evidence indicates declining outlook; short investment horizon; low risk tolerance"
+        },
+        {
+          "label": "Wait / review",
+          "amount": 0.0,
+          "score": 95,
+          "feasible": true,
+          "rationale": "passes modeled conditions"
+        }
+      ],
+      "finalists": [
+        {
+          "label": "Wait / review",
+          "amount": 0.0,
+          "score": 95,
+          "feasible": true,
+          "rationale": "passes modeled conditions"
+        },
+        {
+          "label": "Requested amount",
+          "amount": 2000,
+          "score": 0,
+          "feasible": false,
+          "rationale": "cash would fall below expenses / emergency reserve; position concentration limit exceeded; newer earnings evidence indicates declining outlook; short investment horizon; low risk tolerance"
+        }
+      ],
+      "selected": {
+        "label": "Wait / review",
+        "amount": 0.0,
+        "score": 95,
+        "feasible": true,
+        "rationale": "passes modeled conditions"
+      },
+      "signal": "negative",
+      "unexpected_expense": 0,
+      "requested_amount": 2000
+    },
+    "research": {
+      "signal": "negative",
+      "latest_date": "2022-08-24",
+      "sources": [
+        {
+          "title": "NVIDIA Q1 FY2023 \u2014 financial results",
+          "date": "2022-05-25",
+          "id": "nvda-q1",
+          "source": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-first-quarter-fiscal-2023",
+          "excerpt": "NVIDIA reported year-over-year revenue growth of 46% on $8.29 billion of revenue. Data Center and Gaming reached record revenue. GAAP diluted EPS was $0.64, 16% below the prior year; the Arm transaction termination charge affected earnings.",
+          "retrieval_score": 0.189
+        },
+        {
+          "title": "NVIDIA Q2 FY2023 \u2014 business context",
+          "date": "2022-08-24",
+          "id": "nvda-q2-detail",
+          "source": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-second-quarter-fiscal-2023",
+          "excerpt": "Data Center revenue reached $3.81 billion, 61% above the prior year. Management described a difficult economic environment and supply-chain transitions. Segment strength and the overall earnings decline provide contrasting evidence.",
+          "retrieval_score": 0.17
+        },
+        {
+          "title": "NVIDIA Q2 FY2023 \u2014 financial results",
+          "date": "2022-08-24",
+          "id": "nvda-q2",
+          "source": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-second-quarter-fiscal-2023",
+          "excerpt": "NVIDIA reported year-over-year revenue growth of 3% on $6.70 billion of revenue, a slowdown from the previous quarter. Revenue declined 19% sequentially. GAAP diluted EPS fell 72% year over year to $0.26.",
+          "retrieval_score": 0.111
+        }
+      ],
+      "derived_metrics": {
+        "revenue_growth_pct": 3.0,
+        "forward_guidance_pct": null,
+        "weakening_language": true
+      },
+      "baseline_signal": "negative",
+      "retrieval_mode": "TF-IDF (offline)",
+      "ai_status": "Not requested",
+      "ai_analysis": null
+    },
+    "review": {
+      "passed": true,
+      "issues": [],
+      "human_review_required": true
+    },
+    "explanation": "Investor Profile B: modeled investment capacity is $0 after reserves, upcoming expenses, debt and any unexpected expense. The latest indexed NVDA report (2022-08-24) produces a negative historical research signal. Decision: wait / review, with $0 for further consideration. Passes modeled conditions. The user must make the final decision.",
+    "elapsed_ms": 1,
+    "disclaimer": "Historical replay using public earnings summaries and sample investor profiles. Not current market analysis, financial advice or an instruction to trade."
+  },
+  "6. Unexpected $5,000 expense \u2014 User A": {
+    "user_id": "user_a",
+    "user_name": "Investor Profile A",
+    "ticker": "NVDA",
+    "requested_amount": 2000,
+    "recommendation": "CONSIDER FOR FURTHER REVIEW",
+    "consider_amount": 1000.0,
+    "financials": {
+      "investment_capacity": 1000.0,
+      "current_position_value": 3500.0,
+      "current_portfolio_value": 20000.0,
+      "options": [
+        {
+          "label": "Requested amount",
+          "amount": 2000,
+          "score": 0,
+          "feasible": false,
+          "rationale": "cash would fall below expenses / emergency reserve"
+        },
+        {
+          "label": "Smaller amount",
+          "amount": 1000.0,
+          "score": 82,
+          "feasible": true,
+          "rationale": "passes modeled conditions"
+        },
+        {
+          "label": "Wait / review",
+          "amount": 0.0,
+          "score": 70,
+          "feasible": true,
+          "rationale": "passes modeled conditions"
+        }
+      ],
+      "finalists": [
+        {
+          "label": "Smaller amount",
+          "amount": 1000.0,
+          "score": 82,
+          "feasible": true,
+          "rationale": "passes modeled conditions"
+        },
+        {
+          "label": "Wait / review",
+          "amount": 0.0,
+          "score": 70,
+          "feasible": true,
+          "rationale": "passes modeled conditions"
+        }
+      ],
+      "selected": {
+        "label": "Smaller amount",
+        "amount": 1000.0,
+        "score": 82,
+        "feasible": true,
+        "rationale": "passes modeled conditions"
+      },
+      "signal": "positive",
+      "unexpected_expense": 5000,
+      "requested_amount": 2000
+    },
+    "research": {
+      "signal": "positive",
+      "latest_date": "2022-05-25",
+      "sources": [
+        {
+          "title": "NVIDIA Q1 FY2023 \u2014 financial results",
+          "date": "2022-05-25",
+          "id": "nvda-q1",
+          "source": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-first-quarter-fiscal-2023",
+          "excerpt": "NVIDIA reported year-over-year revenue growth of 46% on $8.29 billion of revenue. Data Center and Gaming reached record revenue. GAAP diluted EPS was $0.64, 16% below the prior year; the Arm transaction termination charge affected earnings.",
+          "retrieval_score": 0.228
+        },
+        {
+          "title": "NVIDIA Q1 FY2023 \u2014 outlook",
+          "date": "2022-05-25",
+          "id": "nvda-q1-outlook",
+          "source": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-first-quarter-fiscal-2023",
+          "excerpt": "The next quarter revenue outlook was $8.10 billion, plus or minus 2%. The estimate included roughly $500 million in reductions associated with Russia and COVID-related restrictions in China.",
+          "retrieval_score": 0.035
+        }
+      ],
+      "derived_metrics": {
+        "revenue_growth_pct": 46.0,
+        "forward_guidance_pct": null,
+        "weakening_language": false
+      },
+      "baseline_signal": "positive",
+      "retrieval_mode": "TF-IDF (offline)",
+      "ai_status": "Not requested",
+      "ai_analysis": null
+    },
+    "review": {
+      "passed": true,
+      "issues": [],
+      "human_review_required": true
+    },
+    "explanation": "Investor Profile A: modeled investment capacity is $1,000 after reserves, upcoming expenses, debt and any unexpected expense. The latest indexed NVDA report (2022-05-25) produces a positive historical research signal. Decision: consider for further review, with $1,000 for further consideration. Passes modeled conditions. The user must make the final decision.",
+    "elapsed_ms": 1,
+    "disclaimer": "Historical replay using public earnings summaries and sample investor profiles. Not current market analysis, financial advice or an instruction to trade."
+  }
+}
